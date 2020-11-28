@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Prime Automations Ltm</title>
+  <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
+  <meta name="author" content="Vincent Garreau" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+  <!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">Added by Ferdousi-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" media="screen" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;900&display=swap" rel="stylesheet"> 
+  
+</head>
+<body>
+<!-- Cover Page View Starts -->
+<!-- count particles -->
+
+<!-- particles.js container -->
+<div id="particles-js"></div>
+
+<div class="count-particles">
+  <span class="js-count-particles"><p>Prime Automation Ltd</p></span>  
+</div>
+<div id='sitelogo'>
+  <img src="images/logo.png" width="280px" height="300px">
+  <div>
+    <button id="exploreSite" type="submit" onClick="">Explore our Automations</button>
+  </div>
+  
+</div>
+
+<!-- scripts --
+<script src="../particles.js"></script>
+<script src="js/app.js"></script>
+<-- particles.js container -->
+
+<!-- Cover Page View Ends -->
+
+<header id="header-nav" class="navbar navbar-default">
+    
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a href="index.html" class="pull-left visible-md visible-lg">
+          <div id="logo-img">
+            <img src="images/logo-ss.PNG" width="300px" height="140px">
+          </div>
+        </a>
+
+        <button id="navbarToggle" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+      </div>
+
+      <div id="collapsable-nav" class="collapse navbar-collapse">
+
+          <div class="navbar-info">
+            <div class="navbar-info-email">
+                <span id="info-email">info.primegroupbd@gmail.com</span> 
+                 <a href="tel:+880 248953846">
+                      <span>+880 248953846</span></a>
+            </div>
+          <br>
+            <ul id="nav-list" class="nav navbar-nav">
+              <li id="navHomeButton" class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="navbardrop" href="#">Update Home</a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#" onclick="setttingUpdate('Tittle');return false;">Tittle</a><br/>
+                  <a class="dropdown-item" href="#" onclick="setttingUpdate('Heading');return false;">Heading</a><br/>
+                  <a class="dropdown-item" href="#" onclick="setttingUpdate('Copyright');return false;">Copyright</a></div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Update CONTACT</a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#" onclick="setttingUpdate('Address');return false;">Address</a><br/>
+                  <a class="dropdown-item" href="#" onclick="setttingUpdate('FullAddress');return false;">Full Address</a><br/>
+                  <a class="dropdown-item" href="#" onclick="setttingUpdate('Email');return false;">Email</a><br/>
+                  <a class="dropdown-item" href="#" onclick="setttingUpdate('Mobile');return false;">Mobile</a></div></div>
+              </li>
+            </ul><!-- #nav-list -->
+          </div>
+           
+      </div><!-- .collapse .navbar-collapse -->
+    </div>
+</header>
+
+<!-- Start of #main-content -->
+<div id="main-content" class="container-fluid">
+
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="max-height: 600px; overflow: hidden;">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox" id="sliderShow">
+      <!--Show all the slide here-->
+    </div>
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+<div id="slide_edit_section" class="container">
+<button type="button" class="close" aria-label="Close" style="font-size:60px;float: right;" title="Delete this Slide">
+  <span aria-hidden="true">&times;</span>
+</button>
+<button class="btn btn-lg" onclick="addMoreSlide()" style="background-color:transparent;font-size:36px;float:right;" title="Add More Slide">
+  <i class="fa fa-plus"></i> 
+</button>
+</div>
+<div id="main-content" class="container">
+  <div id="addSlide" class="slide-div">
+    <h3>Add More Slide</h3>
+    <label>Slide No : </label>
+    <input type="number" id="slideNo" required/>
+    <label>Image Name :</label>
+    <input type="text" id="slideName" required/>
+    <button id="addSlide">ADD it</button>
+    <button onclick="cancle('addSlide')">Cancle</button>
+  </div>
+</div>
+  <section id="aboutSection">
+    <h1 class="sectionTitle text-center" id="aboutUpdate">ABOUT</h1> 
+    <p id="about_para">
+    <button class="btn btn-lg" onclick="setttingUpdate('About');return false;" title="Edit">
+      <i class="fa fa-pencil"></i> 
+   </button>
+  </p>
+
+    </div>
+    
+  </section>
+  
+  <section id="productSection">
+    <h1 class="sectionTitle text-center">PRODUCTS</h1>
+    <div id="product_section" class="container">
+          <!--Show All Product -->
+          <button class="btn btn-lg" title="Add More Product" onclick="addMorePro()">
+            <i class="fa fa-plus"></i> 
+         </button>
+         <div id="main-content" class="container">
+          <div id="product_add" class="product-div">
+            <input type="number" placeholder="Product Id" id="id_field" required/>
+            <input type="text" placeholder="Product description" id="product_field" required/>
+            <input type="text" placeholder="Image name" id="image_field" required/>
+            <button id="addProduct">Add new Product</button>
+            <button onclick="cancle('product_add')">Cancle</button>
+          </div>
+        </div>
+    </div>
+    <div id="update" class="update_div">
+      <h3>Update Product Information</h3>
+      <label>Description : </label>
+      <input type="text" id="product_up" required/>
+      <label>Image Name :</label>
+      <input type="text" id="image_up" required/>
+      <button id="updatePro">Update it</button>
+      <button onclick="cancle('update')">Cancle</button>
+    </div>
+  </section>
+</div>
+
+</div>
+<!-- stats.js -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+<!-- <script type="text/javascript" src="js/bootstrap.min.js"></script> -->
+  <script> 
+  $("#exploreSite").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#header-nav").offset().top
+    }, 800);
+  });
+  </script>
+
+  <!--Added by Ferdousi/ The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-database.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-analytics.js"></script>
+
+<script src="js/initialize.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<script src="js/firebase.js"></script>
+</body>
+</html>
